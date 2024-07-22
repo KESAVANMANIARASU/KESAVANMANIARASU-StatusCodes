@@ -15,8 +15,28 @@ There are 5 categories of status code responses:
 
 ```java
 app.get("/request-was-accepted", ctx -> {
-    ctx.status(202);
-});
+            ctx.status(202); // Accepted
+        });
+
+        // Example of setting a 400 status code
+        app.get("/client-side-err", ctx -> {
+            ctx.status(400); // Bad Request
+        });
+
+        // Example of setting a 500 status code
+        app.get("/server-side-err", ctx -> {
+            ctx.status(500); // Internal Server Error
+        });
+
+        // Example of setting a 404 status code
+        app.get("/not-found", ctx -> {
+            ctx.status(404); // Not Found
+        });
+
+        // Example of setting a 415 status code
+        app.get("/unsupported-media-type", ctx -> {
+            ctx.status(415); // Unsupported Media Type
+        });
 ```
 
 The only line we need to add to achieve this is `ctx.status(code);` Appropriate codes should be sent back. For instance:
