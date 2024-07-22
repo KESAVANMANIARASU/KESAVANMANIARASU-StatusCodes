@@ -20,7 +20,7 @@ app.get("/request-was-accepted", ctx -> {
 
         // Example of setting a 400 status   code
         app.get("/client-side-err", ctx -> {
-            ctx.status(400); // Bad Request
+            ctx.status(400); // Bad              Request
         });
 
         // Example of setting a 500 status code
